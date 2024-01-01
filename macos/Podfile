@@ -1,0 +1,40 @@
+# Expo
+require File.join(File.dirname(`node --print "require.resolve('expo/package.json')"`), "scripts/autolinking")
+
+require_relative '../node_modules/react-native-macos/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+prepare_react_native_project!
+
+target 'ExpoMacOS-macOS' do
+  platform :macos, '10.15'
+  use_native_modules!
+
+  # Expo
+  pod 'ExpoKeepAwake', :path => '../../../expo/packages/expo-keep-awake/ios'
+  pod 'EXFont', :path => '../../../expo/packages/expo-font/ios'
+  pod 'ExpoFileSystem', :path => '../../../expo/packages/expo-file-system/ios'
+  pod 'EXConstants', :path => '../../../expo/packages/expo-constants/ios'
+  pod 'Expo', :path => '../../../expo/packages/expo'
+  pod 'ExpoModulesCore', :path => '../../../expo/packages/expo-modules-core'
+  use_expo_modules!(
+    exclude: ['expo-application']
+  )
+
+  # Flags change depending on the env values.
+  flags = get_default_flags()
+
+  use_react_native!(
+    :path => '../node_modules/react-native-macos',
+    :hermes_enabled => false,
+    :fabric_enabled => ENV['RCT_NEW_ARCH_ENABLED'] == '1',
+    # Flipper is not compatible w/ macOS
+    :flipper_configuration => FlipperConfiguration.disabled,
+    # An absolute path to your application root.
+    :app_path => "#{Pod::Config.instance.installation_root}/.."
+  )
+
+  post_install do |installer|
+    react_native_post_install(installer)
+  end
+end
