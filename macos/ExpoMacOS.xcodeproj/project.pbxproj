@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34A0A2B4B858086377E01905 /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC37A2DFBD19C9C365E15249 /* ExpoModulesProvider.swift */; };
 		5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 5142014C2437B4B30078DB4F /* AppDelegate.mm */; };
 		514201522437B4B40078DB4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 514201512437B4B40078DB4F /* Assets.xcassets */; };
 		514201552437B4B40078DB4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 514201532437B4B40078DB4F /* Main.storyboard */; };
 		514201582437B4B40078DB4F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 514201572437B4B40078DB4F /* main.m */; };
+		B78A34B8C19833BE6FF590CC /* ExpoModulesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80A4FAEF3C739DFEA7EB57AB /* ExpoModulesProvider.swift */; };
 		B7E87465592BF383B2CC1879 /* libPods-ExpoMacOS-macOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 07E9CB0CA79EEF1F29AAAB40 /* libPods-ExpoMacOS-macOS.a */; };
 /* End PBXBuildFile section */
 
@@ -27,7 +27,7 @@
 		514201562437B4B40078DB4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		514201572437B4B40078DB4F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		514201592437B4B40078DB4F /* ExpoMacOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ExpoMacOS.entitlements; sourceTree = "<group>"; };
-		AC37A2DFBD19C9C365E15249 /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-ExpoMacOS-macOS/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
+		80A4FAEF3C739DFEA7EB57AB /* ExpoModulesProvider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ExpoModulesProvider.swift; path = "Pods/Target Support Files/Pods-ExpoMacOS-macOS/ExpoModulesProvider.swift"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F242462A78EB05CD31046942 /* Pods-ExpoMacOS-macOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExpoMacOS-macOS.debug.xcconfig"; path = "Target Support Files/Pods-ExpoMacOS-macOS/Pods-ExpoMacOS-macOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -69,14 +69,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		3AE258805D0FA49D4657DFE2 /* ExpoModulesProviders */ = {
-			isa = PBXGroup;
-			children = (
-				850B4F11D704D024A135D3DE /* ExpoMacOS-macOS */,
-			);
-			name = ExpoModulesProviders;
-			sourceTree = "<group>";
-		};
 		5142014A2437B4B30078DB4F /* ExpoMacOS-macOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,7 +98,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				0E7083D3FF22531C56B75675 /* Pods */,
-				3AE258805D0FA49D4657DFE2 /* ExpoModulesProviders */,
+				F22289C19DAF8F49F0856D3B /* ExpoModulesProviders */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -122,12 +114,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		850B4F11D704D024A135D3DE /* ExpoMacOS-macOS */ = {
+		E0FC16BA167562741D5916E4 /* ExpoMacOS-macOS */ = {
 			isa = PBXGroup;
 			children = (
-				AC37A2DFBD19C9C365E15249 /* ExpoModulesProvider.swift */,
+				80A4FAEF3C739DFEA7EB57AB /* ExpoModulesProvider.swift */,
 			);
 			name = "ExpoMacOS-macOS";
+			sourceTree = "<group>";
+		};
+		F22289C19DAF8F49F0856D3B /* ExpoModulesProviders */ = {
+			isa = PBXGroup;
+			children = (
+				E0FC16BA167562741D5916E4 /* ExpoMacOS-macOS */,
+			);
+			name = ExpoModulesProviders;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -377,7 +377,7 @@
 			files = (
 				514201582437B4B40078DB4F /* main.m in Sources */,
 				5142014D2437B4B30078DB4F /* AppDelegate.mm in Sources */,
-				34A0A2B4B858086377E01905 /* ExpoModulesProvider.swift in Sources */,
+				B78A34B8C19833BE6FF590CC /* ExpoModulesProvider.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

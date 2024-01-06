@@ -1,5 +1,5 @@
 # Expo
-require File.join(File.dirname(`node --print "require.resolve('expo/package.json')"`), "scripts/autolinking")
+require File.join(File.dirname(`node --print "require.resolve('../../../expo/packages/expo/package.json')"`), "scripts/autolinking")
 
 require_relative '../node_modules/react-native-macos/scripts/react_native_pods'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
@@ -11,14 +11,8 @@ target 'ExpoMacOS-macOS' do
   use_native_modules!
 
   # Expo
-  pod 'ExpoKeepAwake', :path => '../../../expo/packages/expo-keep-awake/ios'
-  pod 'EXFont', :path => '../../../expo/packages/expo-font/ios'
-  pod 'ExpoFileSystem', :path => '../../../expo/packages/expo-file-system/ios'
-  pod 'EXConstants', :path => '../../../expo/packages/expo-constants/ios'
-  pod 'Expo', :path => '../../../expo/packages/expo'
-  pod 'ExpoModulesCore', :path => '../../../expo/packages/expo-modules-core'
   use_expo_modules!(
-    exclude: ['expo-application']
+    searchPaths: ['../../../expo/packages']
   )
 
   # Flags change depending on the env values.
